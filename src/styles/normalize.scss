@@ -1,0 +1,119 @@
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+:focus,
+:active {
+	outline: none;
+}
+
+nav,
+footer,
+header,
+aside {
+	display: block;
+}
+
+input,
+button,
+textarea {
+	font-family: inherit;
+	background: transparent;
+}
+
+input::-ms-clear {
+	display: none;
+}
+
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
+	appearance: none;
+}
+
+input[type='number'],
+input[type='number']:hover,
+input[type='number']:focus {
+	appearance: textfield;
+	appearance: none;
+}
+
+button {
+	cursor: pointer;
+}
+
+button::-moz-focus-inner {
+	padding: 0;
+	border: 0;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+
+	&:hover {
+		text-decoration: none;
+	}
+
+	&:visited {
+		text-decoration: none;
+	}
+
+	&:focus,
+	&:active {
+		outline: none;
+	}
+}
+
+li {
+	list-style-type: none;
+}
+
+ul li {
+	list-style: none;
+}
+
+img {
+	display: block;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-size: inherit;
+	font-weight: inherit;
+}
+
+html,
+body {
+	width: 100%;
+	height: 100%;
+	touch-action: manipulation;
+	text-size-adjust: 100%;
+	-webkit-touch-callout: none;
+	-webkit-tap-highlight-color: transparent;
+}
+
+.animate-show {
+	animation: show 0.2s linear forwards;
+}
+
+@keyframes show {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}

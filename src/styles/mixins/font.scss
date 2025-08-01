@@ -1,0 +1,28 @@
+@mixin fontStyle($fontSize, $lineHeight: null, $fontWeight: null) {
+	font-size: $fontSize + px;
+
+	@if $lineHeight {
+		line-height: calc($lineHeight / $fontSize);
+	}
+
+	@if $fontWeight {
+		font-weight: $fontWeight;
+	}
+}
+
+@mixin multiLineClipped($max-lines) {
+	overflow: hidden;
+	display: block;
+	display: -webkit-box;
+	text-overflow: ellipsis;
+	word-break: break-word;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: $max-lines;
+	line-clamp: $max-lines;
+}
+
+@mixin singleLineClipped {
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
