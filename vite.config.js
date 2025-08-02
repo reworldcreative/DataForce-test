@@ -98,8 +98,7 @@ export default defineConfig(({ command, mode }) => {
         },
       }),
       env.VITE_FAVICONS === 'favicons' &&
-      ViteFaviconsPlugin({
-        logo: './src/assets/react.svg', // шлях до вихідного зображення, яке буде використане для генерації favicon.
+      ViteFaviconsPlugin({ // шлях до вихідного зображення, яке буде використане для генерації favicon.
         // outputPath: "./favicons/",
         favicons: {
           appName: 'Material Landing', // Назва веб-сайту або додатку

@@ -1,0 +1,11 @@
+.charts-list {
+  width: 100%;
+  margin: 50px auto 10px;
+
+  &__nav {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+}

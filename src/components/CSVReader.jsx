@@ -1,6 +1,6 @@
 import '@/styles/components/uploadFile.scss'
 import { useRef, useState } from 'react'
-import { DataChart } from './DataChart'
+import { ChartsList } from './ChartsList'
 
 export function CsvReader() {
 	const [data, setData] = useState({})
@@ -37,8 +37,9 @@ export function CsvReader() {
 				structured[experimentId][metric].push({ step, value })
 			}
 
-			const targetExperimentId = 'exp_1'
-			setData(structured[targetExperimentId] ? { [targetExperimentId]: structured[targetExperimentId] } : {})
+			// const targetExperimentId = 'exp_1'
+			// setData(structured[targetExperimentId] ? { [targetExperimentId]: structured[targetExperimentId] } : {})
+			setData(structured)
 		}
 		reader.readAsText(file)
 	}
@@ -67,10 +68,9 @@ export function CsvReader() {
 
 	return (
 		<>
-			<div
+			<button
 				className='upload-file'
-				role='button'
-				tabIndex={0}
+				type='button'
 				onClick={handleClick}
 				onDrop={handleDrop}
 				onDragOver={handleDragOver}
@@ -86,15 +86,11 @@ export function CsvReader() {
 				/>
 
 				<p className='text-gray-600'>
-					{isDragging ? 'Відпусти файл тут' : 'Перетягни CSV сюди або натисни, щоб завантажити'}
+					{isDragging ? 'Release the file here' : 'Drag & drop CSV here or click to download'}
 				</p>
-			</div>
+			</button>
 
-			<div>
-				{Object.entries(data).map(([experimentId, metrics]) => (
-					<DataChart key={experimentId} experimentId={experimentId} metrics={metrics} />
-				))}
-			</div>
+			<ChartsList data={data} />
 		</>
 	)
 }

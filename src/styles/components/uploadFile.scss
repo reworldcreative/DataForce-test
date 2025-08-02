@@ -7,4 +7,8 @@
   padding: 20px 30px;
   border: 1px solid var(--accent);
   border-radius: 10px;
+
+  &__input {
+    pointer-events: none;
+  }
 }

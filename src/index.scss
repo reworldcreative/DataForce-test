@@ -28,12 +28,12 @@ a:hover {
 
 body {
   display: flex;
+  place-items: center;
   max-width: 1920px;
   min-width: 320px;
   min-height: 100vh;
   margin: 0 auto;
   padding: 20px;
-  place-items: center;
 }
 
 h1 {
@@ -45,6 +45,7 @@ button {
   cursor: pointer;
   padding: 10px;
   border-radius: 8px;
+  color: var(--white);
 }
 
 button:hover {
