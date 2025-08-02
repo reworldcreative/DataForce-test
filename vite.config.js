@@ -10,10 +10,10 @@ import legacy from '@vitejs/plugin-legacy'
 import postcssPresetEnv from 'postcss-preset-env'
 import react from '@vitejs/plugin-react'
 import { resolve } from 'path'
+import sortMediaQueries from 'postcss-sort-media-queries'
 import svgr from 'vite-plugin-svgr'
 import viteImagemin from 'vite-plugin-imagemin'
 import webfontDL from 'vite-plugin-webfont-dl'
-import sortMediaQueries from 'postcss-sort-media-queries'
 
 export default defineConfig(({ command, mode }) => {
   const env = loadEnv(mode, process.cwd())

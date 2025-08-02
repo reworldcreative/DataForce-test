@@ -56,8 +56,8 @@ export default [
 			],
 			'react/display-name': ['warn', { ignoreTranspilerName: false }],
 			'react/forbid-dom-props': ['warn', { forbid: ['style', 'align', 'bgcolor', 'border'] }],
-			'react/forbid-foreign-prop-types': ['warn', { allowInPropTypes: false }],
-			'react/forbid-prop-types': 'warn',
+			// 'react/forbid-foreign-prop-types': ['warn', { allowInPropTypes: false }],
+			// 'react/forbid-prop-types': 'warn',
 			'react/forward-ref-uses-ref': 'error',
 			'react/jsx-boolean-value': 'warn',
 			// 'react/jsx-child-element-spacing': 'warn',
@@ -98,7 +98,7 @@ export default [
 				'warn',
 				{ checkFragmentShorthand: true, checkKeyMustBeforeSpread: true, warnOnDuplicates: true },
 			],
-			'react/jsx-max-props-per-line': ['warn', { maximum: { single: 3, multi: 1 } }],
+			'react/jsx-max-props-per-line': ['warn', { maximum: { single: 5, multi: 1 } }],
 			'react/jsx-newline': [
 				'warn',
 				{
@@ -167,7 +167,7 @@ export default [
 			'react/no-unsafe': 'warn',
 			'react/no-unstable-nested-components': 'warn',
 			'react/no-unused-class-component-methods': ['warn'],
-			'react/no-unused-prop-types': ['warn'],
+			// 'react/no-unused-prop-types': ['warn'],
 			'react/no-unused-state': 'warn',
 			'react/prefer-exact-props': 'warn',
 			'react/prefer-read-only-props': 'warn',

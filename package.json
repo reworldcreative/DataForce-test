@@ -10,7 +10,9 @@
 		"preview": "vite preview"
 	},
 	"dependencies": {
+		"apexcharts": "^5.3.2",
 		"react": "^18.3.1",
+		"react-apexcharts": "^1.7.0",
 		"react-dom": "^18.3.1"
 	},
 	"devDependencies": {
@@ -32,6 +34,7 @@
 		"postcss": "^8.4.38",
 		"postcss-preset-env": "^9.5.13",
 		"postcss-sort-media-queries": "^5.2.0",
+		"sass-embedded": "^1.89.2",
 		"sharp": "^0.33.4",
 		"stylelint": "^16.8.2",
 		"stylelint-config-standard-scss": "^13.1.0",
