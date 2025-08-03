@@ -29,6 +29,8 @@ export function ChartsList({ data }) {
 
 	return (
 		<div className='charts-list'>
+			<p>Experiments list</p>
+
 			<div className='charts-list__nav'>
 				{experimentIds.map(id => (
 					<label key={id}>
