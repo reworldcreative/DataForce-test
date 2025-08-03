@@ -4,10 +4,13 @@ import { ChartsList } from './ChartsList'
 
 export function CsvReader() {
 	const [data, setData] = useState({})
+	const [loading, setLoading] = useState(false)
 	const [isDragging, setIsDragging] = useState(false)
 	const inputRef = useRef(null)
 
 	const handleFile = file => {
+		setLoading(true)
+
 		const reader = new FileReader()
 		reader.onload = event => {
 			const text = event.target?.result
@@ -37,9 +40,8 @@ export function CsvReader() {
 				structured[experimentId][metric].push({ step, value })
 			}
 
-			// const targetExperimentId = 'exp_1'
-			// setData(structured[targetExperimentId] ? { [targetExperimentId]: structured[targetExperimentId] } : {})
 			setData(structured)
+			setLoading(false)
 		}
 		reader.readAsText(file)
 	}
@@ -90,7 +92,14 @@ export function CsvReader() {
 				</p>
 			</button>
 
-			<ChartsList data={data} />
+			{loading ? (
+				<div className='chart-loading'>
+					<div className='spinner' />
+					<p>Loading chart...</p>
+				</div>
+			) : (
+				<ChartsList data={data} />
+			)}
 		</>
 	)
 }
