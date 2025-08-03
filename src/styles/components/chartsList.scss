@@ -7,5 +7,42 @@
     align-items: center;
     flex-wrap: wrap;
     gap: 10px;
+    margin: 0 0 20px;
+
+    &-item {
+      display: flex;
+      gap: 5px;
+    }
+  }
+
+  &__search {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin: 10px auto;
+    padding: 10px 20px;
+    border: 1px solid var(--accent);
+    border-radius: 10px;
+    color: var(--white);
+    background: var(--black);
+
+    &-input {
+      border: none;
+      outline: none;
+      color: inherit;
+      background: inherit;
+    }
+
+    &-clear {
+      cursor: pointer;
+      padding: 0;
+
+      @media (hover: hover) {
+        &:hover {
+          color: var(--accent);
+        }
+      }
+    }
   }
 }

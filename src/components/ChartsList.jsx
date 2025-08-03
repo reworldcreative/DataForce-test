@@ -5,6 +5,7 @@ import { DataChart } from './DataChart'
 export function ChartsList({ data }) {
 	const experimentIds = useMemo(() => Object.keys(data), [data])
 	const [selected, setSelected] = useState(new Set())
+	const [search, setSearch] = useState('')
 	const initializedRef = useRef(false)
 
 	useEffect(() => {
@@ -24,20 +25,45 @@ export function ChartsList({ data }) {
 		setSelected(newSelected)
 	}
 
+	const filteredIds = experimentIds.filter(id => id.toLowerCase().includes(search.toLowerCase()))
+
 	return (
 		<div className='charts-list'>
 			<p>Experiments list</p>
 
+			<div className='charts-list__search'>
+				<input
+					type='text'
+					className='charts-list__search-input'
+					placeholder='Search experiments...'
+					value={search}
+					aria-label='search experiments'
+					onChange={e => setSearch(e.target.value)}
+				/>
+
+				{search.length > 0 && (
+					<button
+						type='button'
+						className='charts-list__search-clear'
+						aria-label='clear search'
+						onClick={() => setSearch('')}
+					>
+						×
+					</button>
+				)}
+			</div>
+
 			<div className='charts-list__nav'>
-				{experimentIds.map(id => (
-					<label key={id}>
+				{filteredIds.map(id => (
+					<label key={id} className='charts-list__nav-item'>
 						<input
 							type='checkbox'
 							checked={selected.has(id)}
 							aria-label={`select experiment ${id}`}
 							onChange={() => toggleExperiment(id)}
 						/>
-						{id}
+
+						<span>{id}</span>
 					</label>
 				))}
 			</div>
