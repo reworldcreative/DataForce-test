@@ -11,6 +11,7 @@
 
     &-item {
       display: flex;
+      align-items: center;
       gap: 5px;
     }
   }
@@ -42,6 +43,37 @@
         &:hover {
           color: var(--accent);
         }
+      }
+    }
+  }
+
+  &__checkbox {
+    display: none;
+
+    &-checkmark {
+      cursor: pointer;
+      position: relative;
+      width: 15px;
+      height: 15px;
+      border: 2px solid var(--accent);
+      border-radius: 4px;
+      background: var(--white);
+      transition: background 0.2s ease;
+    }
+
+    &:checked+.charts-list__checkbox-checkmark {
+      background: var(--accent);
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 4px;
+        width: 5px;
+        height: 10px;
+        border: solid var(--white);
+        border-width: 0 2px 2px 0;
+        transform: rotate(45deg);
       }
     }
   }

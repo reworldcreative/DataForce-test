@@ -57,12 +57,14 @@ export function ChartsList({ data }) {
 				{filteredIds.map(id => (
 					<label key={id} className='charts-list__nav-item'>
 						<input
+							className='charts-list__checkbox'
 							type='checkbox'
 							checked={selected.has(id)}
 							aria-label={`select experiment ${id}`}
 							onChange={() => toggleExperiment(id)}
 						/>
 
+						<span className='charts-list__checkbox-checkmark' />
 						<span>{id}</span>
 					</label>
 				))}
