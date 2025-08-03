@@ -1,16 +1,13 @@
+import '@/styles/components/chartsList.scss'
 import { useState, useMemo, useRef, useEffect } from 'react'
 import { DataChart } from './DataChart'
-import '@/styles/components/chartsList.scss'
 
 export function ChartsList({ data }) {
 	const experimentIds = useMemo(() => Object.keys(data), [data])
 	const [selected, setSelected] = useState(new Set())
-
-	// ✅ прапорець, чи вже ініціалізовано перший вибір
 	const initializedRef = useRef(false)
 
 	useEffect(() => {
-		// зробити вибраним перший, якщо ще не було ініціалізації і є дані
 		if (!initializedRef.current && experimentIds.length > 0) {
 			setSelected(new Set([experimentIds[0]]))
 			initializedRef.current = true
